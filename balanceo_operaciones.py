@@ -18,5 +18,7 @@ Ejemplo de entrada	   Salida esperada
 def es_entrada_balanceada(entrada: str) -> bool:
     return False
 
-entrada = argv[1]
-print(es_entrada_balanceada(entrada))
+if __name__ == '__main__':
+    entrada = str(argv[1])
+    print(es_entrada_balanceada(entrada))
+
