@@ -15,6 +15,7 @@ Ejemplo de entrada	   Salida esperada
 {({))})]		   False
 [[()			   False
 """
+OPERADORES_PERMITIDOS = '(){}[]'
 CERRADO = '})]'
 CERRADO_ABIERTO = {'}':'{', ')':'(', ']':'['}
 
@@ -25,7 +26,8 @@ def es_entrada_balanceada(entrada: str) -> bool:
             if pila and (CERRADO_ABIERTO.get(i) != pila.pop()):
                 return False
             continue
-        pila.append(i)
+        if i in OPERADORES_PERMITIDOS:
+            pila.append(i)
     
     if pila:
         return False
