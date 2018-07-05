@@ -5,7 +5,7 @@ Just another repository with challenges code
 To solve this challenge, it was used a stack.
 #### Run tests
 ```
-$ pythonpython3.6 test_balanceo_operaciones.py -v
+$ python3.6 test_balanceo_operaciones.py -v
 ```
 #### Run script
 ```
