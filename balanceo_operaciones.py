@@ -15,13 +15,10 @@ Ejemplo de entrada	   Salida esperada
 {({))})]		   False
 [[()			   False
 """
-CERRADO = ['}', ')', ']']
+CERRADO = '})]'
 CERRADO_ABIERTO = {'}':'{', ')':'(', ']':'['}
 
 def es_entrada_balanceada(entrada: str) -> bool:
-    # entrada impar
-    if len(entrada) & 1:
-        return False
     pila = []
     for i in entrada:
         if i in CERRADO:
