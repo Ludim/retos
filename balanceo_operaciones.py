@@ -15,7 +15,6 @@ Ejemplo de entrada	   Salida esperada
 {({))})]		   False
 [[()			   False
 """
-ABIERTO = ['{', '(', '[']
 CERRADO = ['}', ')', ']']
 CERRADO_ABIERTO = {'}':'{', ')':'(', ']':'['}
 
