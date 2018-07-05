@@ -5,7 +5,8 @@ class BalanceoOperacionesTest(unittest.TestCase):
     def setUp(self):
         self.input_output = (("(){}[]", True),    ("{[()]}", True),
                         ("([)])", False),    ("{{[[(())]]}}", True),
-                        ("{({))})]", False), ("[[()", False))
+                        ("{({))})]", False), ("[[()", False),
+                        (")(){", False),("[]{)", False))
 
     def test_entrada_balanceada(self):
         print()
