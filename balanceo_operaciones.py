@@ -11,12 +11,26 @@ Ejemplo de entrada	   Salida esperada
 (){}[]	   		   True
 {[()]}			   True
 ([)])			   False
-{{[[(())]]}}		   True
+{{[[(())]]}}	   True
 {({))})]		   False
 [[()			   False
 """
+ABIERTO = ['{', '(', '[']
+CERRADO = ['}', ')', ']']
+CERRADO_ABIERTO = {'}':'{', ')':'(', ']':'['}
+
 def es_entrada_balanceada(entrada: str) -> bool:
-    return False
+    # entrada impar
+    if len(entrada) & 1:
+        return False
+    pila = []
+    for i in entrada:
+        if i in CERRADO and pila and (CERRADO_ABIERTO.get(i) != pila.pop()):
+            return False
+        else:
+            continue
+        pila.append(i)
+    return True
 
 if __name__ == '__main__':
     entrada = str(argv[1])
