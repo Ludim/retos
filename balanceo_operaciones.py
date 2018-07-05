@@ -24,11 +24,14 @@ def es_entrada_balanceada(entrada: str) -> bool:
         return False
     pila = []
     for i in entrada:
-        if i in CERRADO and pila and (CERRADO_ABIERTO.get(i) != pila.pop()):
-            return False
-        else:
+        if i in CERRADO:
+            if pila and (CERRADO_ABIERTO.get(i) != pila.pop()):
+                return False
             continue
         pila.append(i)
+    
+    if pila:
+        return False
     return True
 
 if __name__ == '__main__':
