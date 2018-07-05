@@ -6,7 +6,10 @@ class BalanceoOperacionesTest(unittest.TestCase):
         self.input_output = (("(){}[]", True),    ("{[()]}", True),
                         ("([)])", False),    ("{{[[(())]]}}", True),
                         ("{({))})]", False), ("[[()", False),
-                        (")(){", False),("[]{)", False))
+                        (")(){", False),("[]{)", False),
+                        ("(123)", True),
+                        ("public function a(String[] s) {return s;}", True),
+                        ("def main(self): pass", True))
 
     def test_entrada_balanceada(self):
         #print()
